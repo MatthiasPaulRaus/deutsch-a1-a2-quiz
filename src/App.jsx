@@ -75,7 +75,7 @@ const App =()=> {
             
         <div className="dots"
         onClick={actual}>
-        {Stufen[currentStufe].name}
+        <p>Start</p>
         </div> 
                 
         <button className="arrow"
@@ -123,7 +123,7 @@ const App =()=> {
             Punkte: {score}/{QuestionsList.length}
           </div>
 
-          <button className="next-button" 
+          <button className="repeat" 
           onClick={playAgain}>
           <FaAngleLeft/>
           </button>
@@ -134,14 +134,20 @@ const App =()=> {
  
           <div className="app-wrapper">
             <div className="question-section-wrapper">
-              <div className="question-count">
+
+
+          <div className="info">
+            <div className="question-count">
               {Stufen[currentStufe].name}
               </div>
 
-              <div className="question-count">
-              Aufgabe {currentQuestion + 1} von {QuestionsList.length}
+            <div className="question-count">
+               {currentQuestion + 1} / {QuestionsList.length}
               </div>
-          
+          </div>
+              
+           
+
               <div className="question">
               {QuestionsList[currentQuestion].question}
               </div>
@@ -181,11 +187,14 @@ const App =()=> {
               </div>
 
             </div>
+           
           </div>
         )
-        }
+       }
       </div>
-    )}          
+     
+    )}
+         
   </div>)
 }
 

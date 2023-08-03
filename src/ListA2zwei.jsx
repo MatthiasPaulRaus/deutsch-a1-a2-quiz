@@ -59,8 +59,8 @@ const ListA2zwei = [
         question:"Wie lernen Sie die neuen Wörter?",
         answersList: [
             {answer:"Ich höre gern Lieder und singe mit.", isCorrect:false},
-            {answer:"Ich muss sie oft hören und laut aussprechen.", isCorrect:false},
-            {answer:"Ich lerne die Regeln und schreibe sie auf.", isCorrect:true},
+            {answer:"Ich muss sie oft hören und laut aussprechen.", isCorrect:true},
+            {answer:"Ich lerne die Regeln und schreibe sie auf.", isCorrect:false},
         ]
     },{
         question:"Für einen guten Kartoffelsalat braucht man:",
@@ -125,7 +125,7 @@ const ListA2zwei = [
         answersList: [
             {answer:"Ich konnte schon mit drei Jahren laufen.", isCorrect:false},
             {answer:"Ich habe schon mit vier Jahren Schach gespielt.", isCorrect:true},
-            {answer:"Ich durfe schon mit fünf Jahren in den Zoo gehen.", isCorrect:false},
+            {answer:"Ich durfte schon mit fünf Jahren in den Zoo gehen.", isCorrect:false},
         ]
     },{
         question:"Ich sollte Sie gestern anrufen.",

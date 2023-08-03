@@ -7,16 +7,16 @@
   }
   
   body{
-    background-color:#f2e164;
+    background-color:#efe48e;
     display:flex;
     justify-content: center;
     align-items: center;
   }
   
   .app-wrapper{
-    background-color: #f2e164;
-    box-shadow: 3px  #eeff05bf;
+    background-color:#efe48e;
     max-width:400px;
+    min-height:580px;
     margin: 10px;
     padding: 10px 20px;
     border:3px solid white;
@@ -24,8 +24,7 @@
   }
   
   .start-wrapper{
-    background-color: #f2e164;
-    box-shadow: 3px  #eeff05bf;
+    background-color: #efe48e;
     max-width:400px;
     margin: 100px auto;
     padding: 10px 20px;
@@ -33,22 +32,27 @@
     border-radius: 10px;
   }
   
-
   .question-section-wrapper{
     width:100%;
     position: relative;
     margin-bottom:auto;
   }
   
+  .info{
+    display:flex;
+    margin:6px auto;
+    
+  }
+
   .question-count{
     font-size:14px;
     width:fit-content;
     padding:10px;
-    margin:10px auto;
+    margin:6px auto;
     border: 3px solid white;
     border-radius: 15px;
-    color:white;
-    background-color: dodgerblue;
+    color:dodgerblue;
+    background-color:  #efe48e; 
   }
   
   .question{
@@ -90,27 +94,9 @@
     margin: 10px auto;
   }
   
-  .next-button{
-    width:fit-content;
-    font-size: 30px;
-    padding: 5px;
-    display:flex;
-    justify-content: center;
-    color:white;
-    background-color: dodgerblue;
-    border-radius: 15px;
-    border: 3px solid white;
-    cursor: pointer;
-    margin: 10px auto;
-  }
-  
-  .next-button:hover{
-    background-color: #6b7b8c;
-  }
-  
   .richtig{
     width:fit-content;
-    font-size: 20px;
+    font-size: 18px;
     padding: 10px;
     display:flex;
     justify-content: center;
@@ -124,7 +110,7 @@
   
   .falsch{
     width:fit-content;
-    font-size: 20px;
+    font-size: 18px;
     padding: 10px;
     display:flex;
     justify-content: center;
@@ -145,12 +131,10 @@
   }
   
   .answer-button:active{
-    background-color: orange;
+    background-color: #efe48e;
   }
-  
   .end-wrapper{
-    background-color: #f2e164;
-    box-shadow: 3px  #eeff05bf;
+    background-color: #efe48e;
     max-width:400px;
     margin-top:50%;
     padding: 8px 20px;
@@ -165,9 +149,22 @@
     color:dodgerblue;
     margin: 40px auto;
   }
+  .next-button{
+    width:fit-content;
+    font-size: 30px;
+    padding: 5px;
+    display:flex;
+    justify-content: center;
+    color:white;
+    background-color: dodgerblue;
+    border-radius: 15px;
+    border: 3px solid white;
+    cursor: pointer;
+    margin: 10px auto;
+  }
   
   .repeat{
-    font-size:20px;
+    font-size:40px;
     padding: 10px;
     display:flex;
     justify-content: center;
@@ -176,7 +173,7 @@
     border-radius: 15px;
     border: 3px solid white;
     cursor: pointer;
-    margin: 20px auto;
+    margin: 30px auto;
   }
   
   .score-section{
@@ -184,16 +181,16 @@
     justify-content: center;
     font-size:30px;
     color:dodgerblue;
-    margin-bottom:60px;
+    margin-bottom:40px;
   }
   
   .correct{
     background-color: limegreen;
   }
   
-  
   .slide{
-    font-size:24px;
+    width:80%;
+    font-size:22px;
     justify-content: center;
     display:flex;
     align-items: center;
@@ -201,7 +198,7 @@
     border:3px solid white;
     background-color: dodgerblue;
     border-radius: 10px;
-    margin: 30% auto;
+    margin: 20% auto;
   }
   
   .btn{
@@ -219,7 +216,7 @@
   }
   
   .arrow{
-    font-size: 60px;
+    font-size: 50px;
     margin:auto;
     display:flex;
     justify-content: center;
@@ -230,7 +227,7 @@
   }
   
   .arrow:hover{
-    color:#f2e164;
+    color:#efe48e;
   }
   
   .dotsList{
@@ -243,7 +240,7 @@
   }
   
   .dots{
-    padding: 6px;
+    padding: 5px;
     display:inline-flex;
     color:white;
     background-color:dodgerblue;

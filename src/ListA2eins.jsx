@@ -109,9 +109,9 @@ const ListA2eins = [
     },{
         question:"Wie war der Film?",
         answersList: [
-            {answer:"Sehr spannend. Den kann ich dir wirklich empfehlen.", isCorrect:false},
+            {answer:"Sehr spannend. Den kann ich dir wirklich empfehlen.", isCorrect:true},
             {answer:"Schlecht. Den können Sie nicht empfehlen.", isCorrect:false},
-            {answer:"Er hat ihnen gar nicht gefallen.", isCorrect:true},
+            {answer:"Er hat ihnen gar nicht gefallen.", isCorrect:false},
         ]
     },{
         question:"Es ist schon halb acht!",
