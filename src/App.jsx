@@ -34,18 +34,22 @@ const App =()=> {
   const [clicked, setClicked] = useState(false);
   const [showScore, setShowScore]= useState(false);
   const [valid, setValid]= useState(false)
+  const [nextButton, setNextButton]=useState(false)
 
   const handleCorrectAnswer = (isCorrect) => {
     if(isCorrect) {
       setScore(score + 1);
       setValid(true)
+      
     }
+    setNextButton(true)
     setClicked(true); 
   }
 
   const handleNextQuestion = () => {
     setClicked(false);
     setValid(false)
+    setNextButton(false)
     if(currentQuestion < QuestionsList.length -1){
       setCurrentQuestion(currentQuestion +1)
     }
@@ -64,27 +68,9 @@ const App =()=> {
   
   <div>
     {selector ? (
-    <div className="start-wrapper">
-      <p className="completed">Deutsch-Quiz</p>
-      
-      <div className="slide">
+      <div className="wrapper2">
 
-        <button className="arrow"
-        onClick={prev}><FaAngleLeft/>
-        </button>
-            
-        <div className="dots"
-        onClick={actual}>
-        <p>Start</p>
-        </div> 
-                
-        <button className="arrow"
-        onClick={next}><FaAngleRight/>
-        </button> 
-
-        
-
-      </div>
+      <h2 className="completed">Deutsch-Quiz</h2>
 
       <div className="dotsList">
         {Stufen.map((stufen, index)=>(
@@ -97,6 +83,25 @@ const App =()=> {
           </button> 
         ))} 
       </div>
+      
+      <div className="slide">
+
+        <button className="arrow"
+        onClick={prev}><FaAngleLeft/>
+        </button>
+            
+        <div className="next-button"
+        onClick={actual}>
+        <h2>Start</h2>
+        </div> 
+                
+        <button className="arrow"
+        onClick={next}><FaAngleRight/>
+        </button> 
+
+      </div>
+
+      
 
 
       <div className="dotsList">
@@ -108,7 +113,7 @@ const App =()=> {
         ))}
       </div>
 
-    </div>
+      </div>
 
     ) : (
 
@@ -116,7 +121,8 @@ const App =()=> {
 
       {showScore ?
        (
-        <div className="end-wrapper">
+        <div className="wrapper2">
+
           <div className="completed">Ende!</div>
 
           <div className="score-section">
@@ -130,24 +136,23 @@ const App =()=> {
 
         </div>
 
-        ) : (
+          ) : (
  
-          <div className="app-wrapper">
-            <div className="question-section-wrapper">
+            <div className="wrapper1">
+
+              <div className="question-section-wrapper">
 
 
-          <div className="info">
-            <div className="question-count">
-              {Stufen[currentStufe].name}
+              <div className="info">
+                <div className="question-count">
+                  {Stufen[currentStufe].name}
+                </div>
+
+                <div className="question-count">
+                  {currentQuestion + 1} / {QuestionsList.length}
+                </div>
               </div>
-
-            <div className="question-count">
-               {currentQuestion + 1} / {QuestionsList.length}
-              </div>
-          </div>
               
-           
-
               <div className="question">
               {QuestionsList[currentQuestion].question}
               </div>
@@ -160,33 +165,35 @@ const App =()=> {
                 disabled={clicked}
                 className={`answer-button
                  ${clicked && answerOption.isCorrect ? "correct" : null}`}
-
                 onClick={() => handleCorrectAnswer(answerOption.isCorrect)}
                 >
                 {answerOption.answer} 
                 </button>
               </li>
               ))}
+              
+              </div> 
+            
+                {clicked && valid &&
+                  <div className="richtig"
+                >richtig</div>
+                }
+
+                {clicked && !valid &&
+                  <div className="falsch"
+                >falsch</div>
+                }
+
+                {nextButton && 
+                <div>
+                  <button className="next-button"
+                    onClick={handleNextQuestion}
+                    >
+                    <FaAngleRight className="arrow"/>
+                  </button> 
+                </div>}
+            
               </div>
-
-              {clicked && valid &&
-              <div className="richtig"
-              >richtig</div>
-              }
-
-              {clicked && !valid &&
-              <div className="falsch"
-              >falsch</div>
-              }
-
-              <div>
-              <button className="next-button"
-              onClick={handleNextQuestion}
-              disabled={!clicked}>
-              <FaAngleRight/></button>
-              </div>
-
-            </div>
            
           </div>
         )
